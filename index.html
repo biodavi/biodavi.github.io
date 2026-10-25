@@ -92,6 +92,13 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--b
   background: rgba(0,0,0,.25); text-shadow: 0 1px 4px rgba(0,0,0,.5);
 }
 
+.hero-cv {
+  position: relative; z-index: 1; display: inline-block; margin: 0 auto 1.6rem;
+  font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 99px;
+  background: #fff; color: #0a2a1e; text-decoration: none; box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+.hero-cv:hover { background: #e8f5ee; }
+
 /* ── TABS (Authory-style overlapping card) ── */
 .tabs-outer {
   width: fit-content; max-width: calc(100% - 3rem); margin: -2.25rem auto 0;
@@ -267,6 +274,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     <span class="htag">Space Biology</span>
     <span class="htag">Science Education</span>
   </div>
+  <a class="hero-cv" href="Juan-David-Carvajal-Agudelo-CV.pdf" download>⬇ Download CV (PDF)</a>
 </section>
 
 <!-- TABS -->
@@ -408,7 +416,14 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <div class="exp-role">Molecular Analyst, SARS-CoV-2 Detection</div>
       <div class="exp-org">Dirección Territorial de Salud de Caldas & Universidad de Caldas, Colombia</div>
       <div class="exp-date">Jul–Dec 2020 / Jun–Dec 2021</div>
-      <div class="exp-desc">Reception, handling, and molecular processing of COVID-19 samples in a certified molecular biology laboratory. Full 7-day availability during the health emergency period.</div>
+      <div class="exp-desc">
+        <ul>
+          <li>Reception, handling and molecular processing of COVID-19 samples, including nasopharyngeal swabs, in a certified molecular biology laboratory (BSL-2).</li>
+          <li>Viral RNA extraction and RT-qPCR detection of SARS-CoV-2.</li>
+          <li>Assisted with molecular biology laboratory protocols.</li>
+          <li>Applied biosafety and biohazard waste management procedures.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -867,9 +882,14 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
   <h2 class="sh">Volunteering & community</h2>
   <h3 class="sh2">Volunteering</h3>
   <div class="vol-item">
+    <img class="vol-logo" src="images/ucalgary.jpg" alt="University of Calgary" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🎓</div>
+    <div><div class="vol-title">Mentor, Graduate Leaders Circle (GLC) for NSERC CGRS D applicants</div><div class="vol-org">University of Calgary</div><div class="vol-date">2026 – Present</div><div class="vol-desc">Mentor students preparing their NSERC doctoral scholarship applications, sharing my experience as an NSERC CGRS D winner.</div></div>
+  </div>
+  <div class="vol-item">
     <img class="vol-logo" src="images/kstr.png" alt="Kids Saving the Rainforest" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🦥</div>
-    <div><div class="vol-title">Volunteer, Kids Saving the Rainforest (KSTR)</div><div class="vol-org">Wildlife sanctuary and clinic, helping wildlife animals in Costa Rica</div><div class="vol-date">2026</div><div class="vol-desc">Volunteered at a wildlife sanctuary and clinic in Costa Rica, supporting the care and rehabilitation of rescued wild animals.</div></div>
+    <div><div class="vol-title">Volunteer, Kids Saving the Rainforest (KSTR)</div><div class="vol-date">2026</div><div class="vol-desc">Volunteered at a wildlife sanctuary and clinic in Costa Rica, supporting the care and rehabilitation of rescued wild animals.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/makersmakingchange.avif" alt="Makers Making Change" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -880,6 +900,16 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     <img class="vol-logo" src="images/rsg-colombia.png" alt="RSG Colombia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🧬</div>
     <div><div class="vol-title">Secretary, RSG Colombia, ISCB Student Council</div><div class="vol-org"><a href="https://rsgcolombia.github.io/" target="_blank">rsgcolombia.github.io</a></div><div class="vol-date">2021–2024</div><div class="vol-desc">Served as Secretary of the Regional Student Group of Colombia of the ISCB Student Council, supporting its activities and co-organizing its bioinformatics symposia.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/ISCB-SC.jpg" alt="ISCB Student Council" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🧬</div>
+    <div><div class="vol-title">Outreach Volunteer, ISCB Student Council (ISCB SC)</div><div class="vol-org">International Society for Computational Biology (ISCB) Student Council</div><div class="vol-date">2025</div><div class="vol-desc">Supported outreach activities of the Student Council, helping to share its programs and events with the computational biology student community.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/Iscb_logo.png" alt="ISCB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🎨</div>
+    <div><div class="vol-title">Volunteer Designer, ISCB</div><div class="vol-org">International Society for Computational Biology (ISCB)</div><div class="vol-date">2026</div><div class="vol-desc">Designed graphic materials for ISCB activities and communications.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/save-mexico.jpeg" alt="SAVE Mexico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -898,9 +928,24 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
   </div>
   <h3 class="sh2">Memberships</h3>
   <div class="vol-item">
+    <img class="vol-logo" src="images/ucalgary.jpg" alt="University of Calgary" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🎓</div>
+    <div><div class="vol-title">Member, Innovation Sandbox</div><div class="vol-org">Hunter Hub for Entrepreneurial Thinking · University of Calgary</div><div class="vol-date">2026 – Present</div><div class="vol-desc">Training and mentorship program in entrepreneurship and innovation.</div></div>
+  </div>
+  <div class="vol-item">
     <img class="vol-logo" src="images/ministerio_ciencias.png" alt="Minciencias" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🇨🇴</div>
     <div><div class="vol-title">Junior Researcher (Investigador Junior), SNCTeI</div><div class="vol-org">Ministerio de Ciencia, Tecnología e Innovación (Minciencias), Colombia</div><div class="vol-date">2025 – Present</div><div class="vol-desc">Officially recognized within the National System of Science, Technology and Innovation (SNCTeI) of Colombia. Scientific evaluator for Convocatoria 975 de 2026, reviewing master's-level research proposals.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/Iscb_logo.png" alt="ISCB" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🧬</div>
+    <div><div class="vol-title">Member, ISCB</div><div class="vol-org">International Society for Computational Biology (ISCB)</div><div class="vol-date">2019 – Present</div><div class="vol-desc">International professional society for computational biology and bioinformatics.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/rsg-colombia.png" alt="RSG Colombia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🧬</div>
+    <div><div class="vol-title">Member, RSG Colombia</div><div class="vol-org">Regional Student Group (RSG) Colombia, part of the ISCB Student Council</div><div class="vol-date">2019 – Present</div><div class="vol-desc">Colombian chapter of the ISCB Student Council, a community of students and young researchers in bioinformatics and computational biology.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/gebiome.jpeg" alt="GEBIOME" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -917,7 +962,28 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     <div><div class="vol-title">Member & Leader, SeGeM (Molecular Genetics Research Group)</div><div class="vol-org">Universidad de Caldas</div><div class="vol-date">2017–2023</div><div class="vol-desc">Molecular genetics research group where I began my research training, worked on molecular and genetic studies, and served as group leader (2017–2018).</div></div>
   </div>
   <div class="vol-item">
-    <div class="vol-logo-ph">🌿</div>
+    <img class="vol-logo" src="images/SIMAS.jpg" alt="SIMAS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🦇</div>
+    <div><div class="vol-title">Member, SIMAS (Mammalogy Research Group)</div><div class="vol-org">Semillero de Investigación en Mastozoología · Universidad de Caldas</div><div class="vol-date">2017–2019</div><div class="vol-desc">Undergraduate research group in mammalogy at the Universidad de Caldas.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/IZBD.jpg" alt="IZBD" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🦎</div>
+    <div><div class="vol-title">Member, Natural History Laboratory: Integrative Zoological Biodiversity Discovery (IZBD)</div><div class="vol-org">Museo de Historia Natural, Centro de Museos · Universidad de Caldas</div><div class="vol-date">2019–2021</div><div class="vol-desc">Research laboratory of the Natural History Museum of the Universidad de Caldas, focused on zoological biodiversity; joined during my Master's studies.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/AGA.jpg" alt="American Genetic Association" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🧬</div>
+    <div><div class="vol-title">Member, American Genetic Association (AGA)</div><div class="vol-org">American Genetic Association</div><div class="vol-date">2019–2020</div><div class="vol-desc">US scientific organization dedicated to genetics and genomics, founded in 1903 and publisher of the <em>Journal of Heredity</em>.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/Asociacion Colombiana de Parasitologia.jpeg" alt="Asociación Colombiana de Parasitología y Medicina Tropical" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🦟</div>
+    <div><div class="vol-title">Member, Colombian Association of Parasitology and Tropical Medicine (ACPMT)</div><div class="vol-org">Asociación Colombiana de Parasitología y Medicina Tropical</div><div class="vol-date">2019–2020</div><div class="vol-desc">Colombian scientific association founded in 1965 that brings together parasitology researchers and organizes the biennial Colombian Congress of Parasitology and Tropical Medicine.</div></div>
+  </div>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/abeuc.png" alt="ABEUC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🌿</div>
     <div><div class="vol-title">Member, ABEUC</div><div class="vol-org">Asociación de Biólogos Egresados de la Universidad de Caldas (Association of Biology Graduates of the Universidad de Caldas)</div><div class="vol-date">2019 – Present</div><div class="vol-desc">Professional association of biologists who graduated from the Universidad de Caldas, connecting alumni across the profession.</div></div>
   </div>
 </div>
@@ -1024,6 +1090,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <tr><td>XVII Colombian Congress of Parasitology and Tropical Medicine, Cali, Colombia, <em>Molecular characterization and morphological detection of <em>Trypanosoma</em> spp. in wild mammals from Arauca, Colombia: an approach to potential reservoirs</em><span class="ev-authors">Trujillo-Betancur M.P., <strong>Carvajal-Agudelo J.D.</strong>, Ramírez-Chaves H.E. &amp; Rivera-Páez F.A.</span></td><td><span class="role-badge">Co-author</span></td><td>2019</td></tr>
       <tr><td>XVII Colombian Congress of Parasitology and Tropical Medicine, Cali, Colombia, <em>Comparative evaluation of DNA conservation and extraction methods in blood of wild mammals used in the study of hemoparasites</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, Trujillo-Betancur M.P., Velásquez-Guarín D., Pérez Cárdenas J.E., Ramírez-Chaves H.E. &amp; Rivera-Páez F.A.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2019</td></tr>
       <tr><td>VIII Colombian Symposium of Virology / IV Latin American Congress of Virology, Bogotá, Colombia, <em>HIV mortality and TB coinfection in Caldas, Colombia (2010–2018)</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, Rivera-Páez F.A. &amp; Pérez Cárdenas J.E.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2019</td></tr>
+      <tr><td>Bat Week (Semana del Murciélago), Museum Center, Universidad de Caldas, Manizales, Colombia, exhibition and talks on bats</td><td><span class="role-badge">Organizer</span></td><td>2018</td></tr>
       <tr><td>XV Colombian & IX International Human Genetics Congress, Barranquilla, Colombia, <em>Epidemiological meta-analysis of clinical variables related to canine breast cancer</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Cortes Mera D.M. (other authors)</span></td><td><span class="role-badge">Co-author</span></td><td>2018</td></tr>
       <tr><td>V Regional Biology Symposium, UTP, Santa Rosa de Cabal, Colombia, <em>Evaluation of the genotoxic effect induced by phenthoate in Poecilia reticulata (Cyprinodontiformes: Poeciliidae)</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Marulanda S. (and others)</span></td><td><span class="role-badge">Oral Presenter</span></td><td>2018</td></tr>
       <tr><td>V Regional Biology Symposium, UTP, Santa Rosa de Cabal, Colombia, Hot spring microbial ecology<span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Marulanda S. (and others)</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2018</td></tr>
