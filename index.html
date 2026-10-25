@@ -161,6 +161,10 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--b
 .proj-body { padding: .9rem 1.1rem 1rem; }
 .proj-title { font-size: 13px; font-weight: 600; line-height: 1.45; margin-bottom: 3px; }
 .proj-meta { font-size: 11px; color: var(--text-muted); }
+.proj-foot { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; padding-top: 9px; border-top: 1px solid var(--border); }
+.proj-funder { height: 44px; max-width: 96px; object-fit: contain; flex-shrink: 0; }
+.proj-role { font-size: 11px; font-weight: 600; color: var(--text); flex: 1 1 100px; line-height: 1.35; }
+.proj-grant { font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #fef3c7; color: #92400e; white-space: nowrap; }
 .proj-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; background: var(--teal-light); color: var(--teal-dark); }
 
 /* ── PUBLICATIONS ── */
@@ -173,16 +177,6 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--b
 .pub-journal { font-size: 12px; color: var(--text-muted); font-style: italic; margin-bottom: 4px; }
 .pub-link { font-size: 12px; color: var(--blue); text-decoration: none; font-weight: 500; }
 .pub-link:hover { text-decoration: underline; }
-.scholar-box {
-  background: var(--blue-light); border: 1px solid #bfdbfe; border-radius: 10px;
-  padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
-}
-.scholar-stat { text-align: center; }
-.scholar-stat strong { display: block; font-size: 22px; font-weight: 600; color: var(--blue); line-height: 1; }
-.scholar-stat span { font-size: 11px; color: var(--text-sec); }
-.scholar-divider { width: 1px; height: 36px; background: #bfdbfe; }
-.scholar-link { margin-left: auto; font-size: 13px; color: var(--blue); text-decoration: none; font-weight: 500; white-space: nowrap; }
-.scholar-link:hover { text-decoration: underline; }
 
 /* ── AWARDS ── */
 .award-row { display: flex; gap: 1.25rem; padding: 1rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
@@ -191,6 +185,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--b
 .award-logo { flex-shrink: 0; width: 96px; height: 96px; object-fit: contain; border-radius: 14px; border: 1px solid var(--border); background: white; padding: 8px; display: block; }
 .award-name { font-size: 13px; font-weight: 600; color: var(--text); }
 .award-inst { font-size: 12px; color: var(--text-sec); }
+.award-desc { font-size: 12px; color: var(--text-sec); margin-top: 4px; line-height: 1.5; }
 .award-year { font-size: 11px; color: var(--text-muted); font-weight: 500; }
 
 /* ── VOLUNTEERING ── */
@@ -202,6 +197,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--b
 .vol-org { font-size: 12px; color: var(--blue); font-weight: 500; }
 .vol-org a { color: inherit; }
 .vol-date { font-size: 11px; color: var(--text-muted); }
+.vol-desc { font-size: 12px; color: var(--text-sec); margin-top: 4px; line-height: 1.5; }
 
 /* ── COURSES & EVENTS ── */
 .tbl { width: 100%; border-collapse: collapse; }
@@ -209,6 +205,7 @@ body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--b
 .tbl td { font-size: 13px; color: var(--text-sec); padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
 .tbl tr:last-child td { border-bottom: none; }
 .tbl td:first-child { color: var(--text); }
+.ev-authors { display: block; font-size: 12px; color: var(--text-muted); margin-top: 3px; }
 .tbl td:last-child { white-space: nowrap; color: var(--text-muted); font-size: 12px; }
 .role-badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; background: var(--teal-light); color: var(--teal-dark); white-space: nowrap; }
 
@@ -253,7 +250,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     </a>
   </div>
   <div class="hero-avatar">
-    <img src="images/juandavid.jpg" alt="Juan David"
+    <img src="images/biodavi.jpeg" alt="Juan David"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="fallback" style="display:none">JD</div>
   </div>
@@ -293,14 +290,17 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 <!-- ABOUT -->
 <div id="about" class="sec active">
   <div class="about-grid">
-    <img class="about-img" src="images/juandavid.jpg" alt="Juan David"
+    <img class="about-img" src="images/biodavi.jpeg" alt="Juan David"
          onerror="this.src='images/avatar.jpg'">
     <div>
       <h2 class="about-h">Hola, I'm Juan David</h2>
-      <p class="about-p">I'm a biologist from Manizales, Caldas, Colombia, broadly interested in molecular biology, bioinformatics, evolution, phylogenetics and ecology, disease ecology and biodiversity, mammalogy, and animal welfare — with a research focus on neotropical pathogens and diseases.</p>
-      <p class="about-p">My work centers on molecular biology and microbiome description tied to disease and pathogen interactions, alongside a strong interest in bioinformatics: genomics, metagenomics, and transcriptomics, from 16S sequencing to RT-qPCR and gene expression analysis.</p>
-      <p class="about-p">I have worked as a Research Assistant at Mount Saint Vincent University (MSVU), Canada, and I taught molecular biology and microbiology laboratory sessions as an Instructor for the Genes and Genomes Lab. I am currently recognized as Investigador Junior by Minciencias, Colombia.</p>
-      <p class="about-p">Earlier in my career I worked in field and museum-based mammalogy at Universidad de Caldas, sampling wild mammals and birds in the Colombian Orinoquia and supporting specimen preparation at the Museum of Natural History, alongside I helped during the COVID pandemic as a molecular analyst. I'm a native Spanish speaker with advanced English.</p>
+      <p class="about-p">I'm a biologist from Manizales, Colombia, and my story with science started long before I had a lab coat. In 2012 I received an Award to Perseverance at the Instituto Universitario de Caldas, and that word has followed me ever since. With the support of the Dreams of Peace program from Fundación Bancolombia and academic tuition honours at Universidad de Caldas, I turned curiosity into a career.</p>
+      <p class="about-p"><strong>The undergraduate years.</strong> As a biology student I wanted to be in every lab and every field site I could. I worked as a Laboratory Monitor in Molecular Biology, teaching electrophoresis, PCR and RT-qPCR to my own classmates. I helped study the expression of HER2, MUC1 and ER-α genes in canine breast cancer, spent time preparing specimens at the Museum of Natural History, and led SeGeM, our undergraduate research group in molecular genetics.</p>
+      <p class="about-p"><strong>The Master's and the pandemic.</strong> I started my Master's in Biological Sciences in 2019, with a Minciencias scholarship, studying ticks, bacteria and wild mammals in the Colombian Orinoquia. Then COVID-19 arrived. While my fieldwork slowed down, I joined the molecular diagnostics effort as a Molecular Analyst detecting SARS-CoV-2, work that earned a recognition from the Consejo Profesional de Biología. It taught me that molecular biology is not only about papers, it is about people.</p>
+      <p class="about-p"><strong>My first trip to Canada.</strong> In 2021 an ELAP scholarship took me to Mount Allison University, in Sackville, New Brunswick, to work in Lloyd's Tick Lab on <em>Borrelia</em> genotypes. It was my first time in Canada and my first time doing science in a second language, and it opened a door that I am still walking through. My thesis from that work was later recognized as a Meritorious Thesis.</p>
+      <p class="about-p"><strong>Space biology in Halifax.</strong> In 2022 I moved to Halifax to join the Bone Development Lab at Mount Saint Vincent University. For almost four years I used zebrafish to ask how simulated microgravity and whole-body vibration change bone, in research supported by the Canadian Space Agency. I learned gene expression, histology, cell culture and microscopy, presented at regional symposia, and published papers on the way, while also teaching the Genes and Genomes Lab.</p>
+      <p class="about-p"><strong>Now, the PhD.</strong> In 2026 I started a PhD in Veterinary Medical Sciences at the University of Calgary, supported by an NSERC Canada Graduate Scholarship, with a specialization in Wildlife Health and Ecology. My project studies emerging pathogens in wild mammals from Costa Rica, bringing me back to the Neotropics, the animals and the pathogens that first got me curious.</p>
+      <p class="about-p">From Manizales to Sackville, Halifax and Calgary, the lesson is the same: keep showing up, stay curious, and say yes to the next door. I'm a native Spanish speaker with advanced English.</p>
       <p class="about-p">In research publications you can find me as Juan D. Carvajal-Agudelo.</p>
       <div class="about-links">
         <a class="about-link" href="https://scholar.google.com/citations?user=_loX9b4AAAAJ&hl=es" target="_blank">Google Scholar</a>
@@ -335,14 +335,28 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 
   <div class="exp-item">
     <div class="exp-logo-wrap">
+      <img class="exp-logo" src="images/ucalgary.jpg" alt="University of Calgary"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="exp-logo-ph" style="display:none">🎓</div>
+    </div>
+    <div>
+      <div class="exp-role">Graduate Student (PhD), Wildlife Health and Ecology</div>
+      <div class="exp-org">Faculty of Veterinary Medicine, University of Calgary, Alberta, Canada</div>
+      <div class="exp-date">2026 – Present</div>
+      <div class="exp-desc">Doctoral research on emerging pathogens in wild mammals from Costa Rica, supported by an NSERC Canada Graduate Scholarship.</div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-logo-wrap">
       <img class="exp-logo" src="images/ministerio_ciencias.png" alt="Minciencias"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="exp-logo-ph" style="display:none">🇨🇴</div>
     </div>
     <div>
-      <div class="exp-role">Junior Researcher — Investigador Junior</div>
+      <div class="exp-role">Junior Researcher, Investigador Junior</div>
       <div class="exp-org">Ministerio de Ciencia, Tecnología e Innovación (Minciencias), Colombia</div>
-      <div class="exp-date">2025 – Present</div>
+      <div class="exp-date">May – July 2026</div>
       <div class="exp-desc">Officially recognized within the National System of Science, Technology and Innovation (SNCTeI) of Colombia. Scientific evaluator for Convocatoria 975 de 2026, reviewing master's-level research proposals.</div>
     </div>
   </div>
@@ -354,7 +368,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <div class="exp-logo-ph" style="display:none">🎓</div>
     </div>
     <div>
-      <div class="exp-role">Laboratory Instructor — Genes and Genomes Lab</div>
+      <div class="exp-role">Laboratory Instructor, Genes and Genomes Lab</div>
       <div class="exp-org">Mount Saint Vincent University, Halifax, NS, Canada</div>
       <div class="exp-date">Fall 2025</div>
       <div class="exp-desc">Taught laboratory sessions for biology major students in molecular biology and microbiology techniques: cloning, PCR, DNA extraction, gel electrophoresis, and related methods. Designed and delivered hands-on instruction aligned with the undergraduate biology curriculum.</div>
@@ -369,7 +383,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     </div>
     <div>
       <div class="exp-role">Research Assistant</div>
-      <div class="exp-org">Bone Development Lab — Mount Saint Vincent University, Halifax, NS, Canada</div>
+      <div class="exp-org">Bone Development Lab, Mount Saint Vincent University, Halifax, NS, Canada</div>
       <div class="exp-date">February 2022 – November 2025</div>
       <div class="exp-desc">
         <ul>
@@ -377,6 +391,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
           <li>Wrote and assisted with Animal Care Committee (ACC) protocols.</li>
           <li>Supported CSA-funded research on bone physiology via simulated microgravity and vibration experiments; techniques included gene expression analysis, tissue staining, cell culture, and advanced microscopy.</li>
           <li>Conducted RT-qPCR, statistical analysis, prepared reports, and contributed to scientific articles and grant applications.</li>
+          <li>Supported bioinformatics work in transcriptomics and data analysis.</li>
           <li>Supervised and mentored undergraduate and graduate students.</li>
         </ul>
       </div>
@@ -390,7 +405,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <div class="exp-logo-ph" style="display:none">🧬</div>
     </div>
     <div>
-      <div class="exp-role">Molecular Analyst — SARS-CoV-2 Detection</div>
+      <div class="exp-role">Molecular Analyst, SARS-CoV-2 Detection</div>
       <div class="exp-org">Dirección Territorial de Salud de Caldas & Universidad de Caldas, Colombia</div>
       <div class="exp-date">Jul–Dec 2020 / Jun–Dec 2021</div>
       <div class="exp-desc">Reception, handling, and molecular processing of COVID-19 samples in a certified molecular biology laboratory. Full 7-day availability during the health emergency period.</div>
@@ -409,6 +424,8 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <div class="exp-date">March 2019 – March 2021</div>
       <div class="exp-desc">
         <ul>
+          <li>Conducted field work collecting samples from wild mammals for pathogen and microbiome studies.</li>
+          <li>Contributed to disease ecology research on pathogens, vectors and their wild mammal hosts.</li>
           <li>Pathogen detection via PCR and sequencing with molecular markers.</li>
           <li>16S metagenomic bioinformatic analysis; report and article preparation.</li>
           <li>Specimen preparation and taxidermy support at the Museum of Natural History (mammalogy).</li>
@@ -424,10 +441,10 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <div class="exp-logo-ph" style="display:none">🦠</div>
     </div>
     <div>
-      <div class="exp-role">Research Internship — Lloyd's Tick Lab</div>
+      <div class="exp-role">Research Internship, Lloyd's Tick Lab</div>
       <div class="exp-org">Mount Allison University, Sackville, NB, Canada</div>
       <div class="exp-date">Feb – Jun 2021</div>
-      <div class="exp-desc">Multilocus DNA methodology for Borrelia sp. genotype characterization. Funded by Global Affairs Canada — ELAP Scholarship.</div>
+      <div class="exp-desc">Multilocus DNA methodology for <em>Borrelia</em> sp. genotype characterization. Funded by Global Affairs Canada, ELAP Scholarship.</div>
     </div>
   </div>
 
@@ -453,9 +470,9 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     </div>
     <div>
       <div class="exp-role">Laboratory Monitor (Teaching Assistant)</div>
-      <div class="exp-org">Molecular Biology Laboratory, Universidad de Caldas, Colombia</div>
+      <div class="exp-org">Molecular Biology and Cell Biology Laboratories, Universidad de Caldas, Colombia</div>
       <div class="exp-date">February 2017 – February 2018</div>
-      <div class="exp-desc">Instruction in electrophoresis, PCR, RT-qPCR, DNA/RNA extraction, histology, and microscopy. Evaluation and monitoring of undergraduate biology students.</div>
+      <div class="exp-desc">Teaching assistant for both the Molecular Biology and Cell Biology laboratory courses. Instruction in electrophoresis, PCR, RT-qPCR, DNA/RNA extraction, histology, and microscopy. Evaluation and monitoring of undergraduate biology students.</div>
     </div>
   </div>
 </div>
@@ -466,15 +483,43 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 
   <div class="exp-item">
     <div class="exp-logo-wrap">
-      <img class="exp-logo" src="images/ucaldasmta.jpg" alt="U. Caldas"
+      <img class="exp-logo" src="images/ucalgary.jpg" alt="University of Calgary"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="exp-logo-ph" style="display:none">🎓</div>
+    </div>
+    <div>
+      <div class="exp-role">Doctor of Philosophy in Veterinary Medical Sciences</div>
+      <div class="exp-org">University of Calgary, Alberta, Canada</div>
+      <div class="exp-date">Started 2026</div>
+      <div class="exp-desc" style="margin-top:4px">Specialization in Wildlife Health and Ecology.<br>Project: Emerging pathogens in wild mammals from Costa Rica.</div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-logo-wrap">
+      <img class="exp-logo" src="images/ucaldas.jpg" alt="U. Caldas"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="exp-logo-ph" style="display:none">🎓</div>
     </div>
     <div>
       <div class="exp-role">Master in Biological Sciences</div>
       <div class="exp-org">Universidad de Caldas, Colombia</div>
-      <div class="exp-date">2022 · Exchange student at Mount Allison University, Canada (2021)</div>
-      <div class="exp-desc" style="font-style:italic;margin-top:4px">Thesis: Bacterial microbiome of <em>Ornithodoros cf. hasei</em> (Acari: Argasidae) and wild mammals in Arauca — Colombian Orinoquia.</div>
+      <div class="exp-date">2022</div>
+      <div class="exp-desc" style="font-style:italic;margin-top:4px">Thesis: Bacterial microbiome of <em>Ornithodoros cf. hasei</em> (Acari: Argasidae) and wild mammals in Arauca, Colombian Orinoquia.</div>
+    </div>
+  </div>
+
+  <div class="exp-item">
+    <div class="exp-logo-wrap">
+      <img class="exp-logo" src="images/mta.jpg" alt="Mount Allison University"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="exp-logo-ph" style="display:none">🎓</div>
+    </div>
+    <div>
+      <div class="exp-role">Exchange Program</div>
+      <div class="exp-org">Mount Allison University, Sackville, NB, Canada</div>
+      <div class="exp-date">2021</div>
+      <div class="exp-desc" style="margin-top:4px">Project: Novel <em>Borrelia</em> (Spirochaetales) genotypes in <em>Ornithodoros hasei</em> (Schulze, 1935) (Acari: Argasidae) and wild mammals from the Orinoco River basin of Colombia.</div>
     </div>
   </div>
 
@@ -485,7 +530,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
       <div class="exp-logo-ph" style="display:none">🧬</div>
     </div>
     <div>
-      <div class="exp-role">Bachelor of Science — Biology</div>
+      <div class="exp-role">Bachelor of Science, Biology</div>
       <div class="exp-org">Universidad de Caldas, Colombia</div>
       <div class="exp-date">2018</div>
       <div class="exp-desc" style="margin-top:4px">Research participation: Expression of HER2, MUC1 and ER-α genes in the early diagnosis of canine breast cancer.</div>
@@ -495,17 +540,18 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 
 <!-- PROJECTS -->
 <div id="projects" class="sec">
-  <h2 class="sh">Research projects</h2>
+  <h2 class="sh">Research projects & grants</h2>
   <div class="proj-grid">
 
     <div class="proj-card">
-      <img class="proj-img" src="images/pic7.jpg" alt="Microgravity vibration"
+      <img class="proj-img" src="images/vibration.png" alt="Whole-body vibration"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="proj-ph" style="display:none">🐟</div>
       <div class="proj-body">
         <div class="proj-tag">2024–2025 · Research Nova Scotia</div>
         <div class="proj-title">Understanding the impacts of whole-body vibration exposure on bone health</div>
         <div class="proj-meta">RT-qPCR · Tissue staining · Zebrafish</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/research-nova-scotia.jpg" alt="Research Nova Scotia" title="Research Nova Scotia"><span class="proj-role">Research Assistant</span></div>
       </div>
     </div>
 
@@ -517,6 +563,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
         <div class="proj-tag">2023–2024 · Canadian Space Agency</div>
         <div class="proj-title">Simulated microgravity & vibration effects in bone tissue in vivo</div>
         <div class="proj-meta">qPCR · Cell culture · Zebrafish larvae</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/CSA_logo.png" alt="Canadian Space Agency" title="Canadian Space Agency"><span class="proj-role">Research Assistant</span><span class="proj-grant">Grant ~CAD 50K · Applicant</span></div>
       </div>
     </div>
 
@@ -528,6 +575,31 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
         <div class="proj-tag">2022–2023 · Canadian Space Agency</div>
         <div class="proj-title">Microgravity-induced bone loss via simulated microgravity experiments</div>
         <div class="proj-meta">Gene expression · Zebrafish scales</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/CSA_logo.png" alt="Canadian Space Agency" title="Canadian Space Agency"><span class="proj-role">Research Assistant</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <img class="proj-img" src="images/covid-lab.jpg" alt="Laboratory COVID-19"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="proj-ph" style="display:none">🧪</div>
+      <div class="proj-body">
+        <div class="proj-tag">2021 · Ministerio de Ciencias Colombia & Universidad de Caldas</div>
+        <div class="proj-title">Laboratory COVID-19</div>
+        <div class="proj-meta">Molecular diagnostics · SARS-CoV-2 detection</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/ministerio_ciencias.png" alt="Ministerio de Ciencias Colombia" title="Ministerio de Ciencias Colombia"><img class="proj-funder" src="images/ucaldas.jpg" alt="Universidad de Caldas" title="Universidad de Caldas"><span class="proj-role">Molecular Analyst</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <img class="proj-img" src="images/covidlab-2.jpg" alt="Biosafety cabinets, Caldas laboratory"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="proj-ph" style="display:none">🦠</div>
+      <div class="proj-body">
+        <div class="proj-tag">2020 · Ministerio de Ciencias Colombia & Universidad de Caldas</div>
+        <div class="proj-title">Implementation of an innovation system to address problems associated with high-risk biological agents to human health through the strengthening of laboratories in the Caldas department</div>
+        <div class="proj-meta">Molecular diagnostics · Laboratory strengthening</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/ministerio_ciencias.png" alt="Ministerio de Ciencias Colombia" title="Ministerio de Ciencias Colombia"><img class="proj-funder" src="images/ucaldas.jpg" alt="Universidad de Caldas" title="Universidad de Caldas"><span class="proj-role">Molecular Analyst</span></div>
       </div>
     </div>
 
@@ -536,9 +608,10 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="proj-ph" style="display:none">🦎</div>
       <div class="proj-body">
-        <div class="proj-tag">2019–2021 · Ministerio de Ciencias Colombia</div>
-        <div class="proj-title">Ticks & Rickettsia in birds and wild mammals — Arauca, Colombian Orinoquia</div>
+        <div class="proj-tag">2019–2021 · Ministerio de Ciencias Colombia & Universidad de Caldas</div>
+        <div class="proj-title">The role of wild birds and small mammals in the circulation of ticks and rickettsiae in the department of Arauca, Colombia</div>
         <div class="proj-meta">16S Metagenomics · Field sampling</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/ministerio_ciencias.png" alt="Ministerio de Ciencias Colombia" title="Ministerio de Ciencias Colombia"><img class="proj-funder" src="images/ucaldas.jpg" alt="Universidad de Caldas" title="Universidad de Caldas"><span class="proj-role">Master's student</span></div>
       </div>
     </div>
 
@@ -550,6 +623,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
         <div class="proj-tag">2019–2020 · Universidad de Caldas</div>
         <div class="proj-title">Peri-urban control barriers: hemoparasites in wild mammals of Manizales eco-parks</div>
         <div class="proj-meta">PCR · DNA sequencing · Field sampling</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/ucaldas.jpg" alt="Universidad de Caldas" title="Universidad de Caldas"><span class="proj-role">Master's student &amp; co-researcher</span><span class="proj-grant">Grant ~CAD 1K · Applicant</span></div>
       </div>
     </div>
 
@@ -558,9 +632,10 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="proj-ph" style="display:none">🧫</div>
       <div class="proj-body">
-        <div class="proj-tag">2019–2021 · Co-director</div>
+        <div class="proj-tag">2019–2021 · Universidad de Caldas</div>
         <div class="proj-title"><em>T. cruzi</em> & <em>T. rangeli</em> in wild mammals from Arauca, Colombia</div>
         <div class="proj-meta">Molecular + morphological characterization</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/ucaldas.jpg" alt="Universidad de Caldas" title="Universidad de Caldas"><span class="proj-role">Undergraduate thesis co-supervisor</span></div>
       </div>
     </div>
 
@@ -572,6 +647,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
         <div class="proj-tag">2017–2020 · Universidad de Caldas</div>
         <div class="proj-title">HER2, MUC1 & ER-α gene expression in canine breast cancer early diagnosis</div>
         <div class="proj-meta">SNPs · RT-qPCR · Epidemiological analysis</div>
+        <div class="proj-foot"><img class="proj-funder" src="images/ucaldas.jpg" alt="Universidad de Caldas" title="Universidad de Caldas"><span class="proj-role">Undergraduate student</span><span class="proj-grant">Grant ~CAD 10K · Applicant</span></div>
       </div>
     </div>
 
@@ -582,14 +658,6 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 <div id="publications" class="sec">
   <h2 class="sh">Publications</h2>
 
-  <div class="scholar-box">
-    <div class="scholar-stat"><strong>95</strong><span>Citations</span></div>
-    <div class="scholar-divider"></div>
-    <div class="scholar-stat"><strong>5</strong><span>h-index</span></div>
-    <div class="scholar-divider"></div>
-    <div class="scholar-stat"><strong>3</strong><span>i10-index</span></div>
-    <a class="scholar-link" href="https://scholar.google.com/citations?user=_loX9b4AAAAJ&hl=es" target="_blank">View full profile on Google Scholar ↗</a>
-  </div>
 
   <div class="pub-item">
     <span class="pub-year y2026">2026</span>
@@ -689,7 +757,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 
   <div class="pub-item">
     <span class="pub-year">2022</span>
-    <div class="pub-title">Bacterial and tick-borne pathogen assemblages in <em>Ornithodoros cf. hasei</em> and wild mammal hosts — Orinoquia, Colombia</div>
+    <div class="pub-title">Bacterial and tick-borne pathogen assemblages in <em>Ornithodoros cf. hasei</em> and wild mammal hosts, Orinoquia, Colombia</div>
     <div class="pub-authors"><strong>Carvajal‐Agudelo, J. D.</strong>, Ramírez‐Chaves, H. E., Ossa‐López, P. A. & Rivera‐Páez, F. A.</div>
     <div class="pub-journal">Experimental and Applied Acarology</div>
     <a class="pub-link" href="https://doi.org/10.1007/s10493-022-00724-9" target="_blank">doi:10.1007/s10493-022-00724-9 ↗</a>
@@ -749,120 +817,186 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
 <div id="awards" class="sec">
   <h2 class="sh">Awards & recognition</h2>
   <div class="award-row">
+    <img class="award-logo" src="images/NSERC-logo.jpg" alt="NSERC" style="object-fit:cover;padding:0;border:none" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="award-icon" style="display:none">🏅</div>
+    <div><div class="award-name">NSERC Canada Graduate Scholarship, Doctoral (CGRS D)</div><div class="award-inst">Natural Sciences and Engineering Research Council of Canada</div><div class="award-year">2026</div><div class="award-desc">Federal doctoral scholarship supporting my PhD in Veterinary Medical Sciences at the University of Calgary.</div></div>
+  </div>
+  <div class="award-row">
+    <img class="award-logo" src="images/ucaldas.jpg" alt="Universidad de Caldas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="award-icon" style="display:none">🏅</div>
+    <div><div class="award-name">Meritorious Thesis</div><div class="award-inst">Universidad de Caldas · Bacterial microbiome of <em>Ornithodoros cf. hasei</em> (Acari: Argasidae) and wild mammals in Arauca, Colombian Orinoquia</div><div class="award-year">2022</div><div class="award-desc">Distinction awarded to my Master's thesis in Biological Sciences on the bacterial microbiome of ticks and wild mammals in the Colombian Orinoquia.</div></div>
+  </div>
+  <div class="award-row">
     <img class="award-logo" src="images/elap.jpeg" alt="ELAP" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="award-icon" style="display:none">🏅</div>
-    <div><div class="award-name">ELAP Scholarship — Emerging Leader in the Americas Program</div><div class="award-inst">Global Affairs Canada · Mount Allison University</div><div class="award-year">2021</div></div>
+    <div><div class="award-name">ELAP Scholarship, Emerging Leader in the Americas Program</div><div class="award-inst">Global Affairs Canada</div><div class="award-year">2021</div><div class="award-desc">Scholarship that funded my research internship at Mount Allison University, Canada, working on <em>Borrelia</em> genotypes in Lloyd's Tick Lab.</div></div>
   </div>
   <div class="award-row">
     <img class="award-logo" src="images/consejo-profesional-de-biologia.jpg" alt="Consejo Profesional de Biología" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="award-icon" style="display:none">🏅</div>
-    <div><div class="award-name">Recognition for COVID-19 pandemic management</div><div class="award-inst">Consejo Profesional de Biología, Colombia</div><div class="award-year">2021</div></div>
+    <div><div class="award-name">Recognition for COVID-19 pandemic management</div><div class="award-inst">Consejo Profesional de Biología, Colombia</div><div class="award-year">2021</div><div class="award-desc">Recognition for my work as a Molecular Analyst detecting SARS-CoV-2 during the COVID-19 pandemic.</div></div>
   </div>
   <div class="award-row">
     <img class="award-logo" src="images/ucaldas.jpg" alt="Universidad de Caldas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="award-icon" style="display:none">🏅</div>
-    <div><div class="award-name">Master Scholarship</div><div class="award-inst">Ministerio de Ciencias Colombia & Universidad de Caldas</div><div class="award-year">2019–2021</div></div>
+    <div><div class="award-name">Master Scholarship</div><div class="award-inst">Ministerio de Ciencias Colombia & Universidad de Caldas</div><div class="award-year">2019–2021</div><div class="award-desc">Scholarship supporting my Master's studies in Biological Sciences at Universidad de Caldas (2019–2021).</div></div>
   </div>
   <div class="award-row">
-    <img class="award-logo" src="images/segem.jpeg" alt="SeGeM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img class="award-logo" src="images/segem.png" alt="SeGeM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="award-icon" style="display:none">🔬</div>
-    <div><div class="award-name">Leader of Undergraduate Research Group in Molecular Genetics (SeGeM)</div><div class="award-inst">Universidad de Caldas</div><div class="award-year">2017–2018</div></div>
+    <div><div class="award-name">Leader of Undergraduate Research Group in Molecular Genetics (SeGeM)</div><div class="award-inst">Universidad de Caldas</div><div class="award-year">2017–2018</div><div class="award-desc">Led the undergraduate research group in molecular genetics, coordinating its members and research activities.</div></div>
   </div>
   <div class="award-row">
     <img class="award-logo" src="images/Fundacion-Bancolombia.webp" alt="Fundación Bancolombia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="award-icon" style="display:none">🎓</div>
-    <div><div class="award-name">Fellow — Dreams of Peace Program</div><div class="award-inst">Bancolombia Foundation</div><div class="award-year">2015–2018</div></div>
+    <div><div class="award-name">Fellow, Dreams of Peace Program</div><div class="award-inst">Bancolombia Foundation</div><div class="award-year">2015–2018</div><div class="award-desc">Scholarship that covered my full undergraduate Biology tuition from second year to graduation, plus a small stipend each semester.</div></div>
   </div>
   <div class="award-row">
     <img class="award-logo" src="images/ucaldas.jpg" alt="Universidad de Caldas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="award-icon" style="display:none">🎓</div>
-    <div><div class="award-name">Honour Academic Tuition</div><div class="award-inst">Universidad de Caldas</div><div class="award-year">2014 & 2016</div></div>
+    <div><div class="award-name">Honour Academic Tuition</div><div class="award-inst">Universidad de Caldas</div><div class="award-year">2014 & 2016</div><div class="award-desc">Tuition waiver awarded for outstanding academic performance during my undergraduate studies. I received it twice: in 2014, for my second year, and in 2016, for my fourth year.</div></div>
   </div>
-  <div class="award-row"><div class="award-icon">🏆</div><div><div class="award-name">Award to Perseverance</div><div class="award-inst">Instituto Universitario de Caldas</div><div class="award-year">2012</div></div></div>
+  <div class="award-row">
+    <img class="award-logo" src="images/IUC.jpeg" alt="Instituto Universitario de Caldas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="award-icon" style="display:none">🏆</div>
+    <div><div class="award-name">Award to Perseverance</div><div class="award-inst">Instituto Universitario de Caldas</div><div class="award-year">2012</div><div class="award-desc">Awarded by the Instituto Universitario de Caldas for the best average grades from 6th to 11th grade in high school.</div></div></div>
 </div>
 
 <!-- VOLUNTEERING -->
 <div id="volunteering" class="sec">
   <h2 class="sh">Volunteering & community</h2>
+  <h3 class="sh2">Volunteering</h3>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/kstr.png" alt="Kids Saving the Rainforest" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🦥</div>
+    <div><div class="vol-title">Volunteer, Kids Saving the Rainforest (KSTR)</div><div class="vol-org">Wildlife sanctuary and clinic, helping wildlife animals in Costa Rica</div><div class="vol-date">2026</div><div class="vol-desc">Volunteered at a wildlife sanctuary and clinic in Costa Rica, supporting the care and rehabilitation of rescued wild animals.</div></div>
+  </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/makersmakingchange.avif" alt="Makers Making Change" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🛠️</div>
-    <div><div class="vol-title">Volunteer Maker — Clubs That Care (Makers Making Change)</div><div class="vol-org">Neil Squire Society — built assistive technology devices for people with disabilities</div><div class="vol-date">November 2025</div></div>
+    <div><div class="vol-title">Volunteer Maker, Clubs That Care (Makers Making Change)</div><div class="vol-org">Neil Squire Society, built assistive technology devices for people with disabilities</div><div class="vol-date">2025</div><div class="vol-desc">Helped build low-cost assistive technology devices for people with disabilities through the Makers Making Change program of the Neil Squire Society.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/rsg-colombia.png" alt="RSG Colombia" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🧬</div>
-    <div><div class="vol-title">Secretary, RSG Colombia — ISCB Student Council</div><div class="vol-org"><a href="https://rsgcolombia.github.io/" target="_blank">rsgcolombia.github.io</a></div><div class="vol-date">2021–2024</div></div>
+    <div><div class="vol-title">Secretary, RSG Colombia, ISCB Student Council</div><div class="vol-org"><a href="https://rsgcolombia.github.io/" target="_blank">rsgcolombia.github.io</a></div><div class="vol-date">2021–2024</div><div class="vol-desc">Served as Secretary of the Regional Student Group of Colombia of the ISCB Student Council, supporting its activities and co-organizing its bioinformatics symposia.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/save-mexico.jpeg" alt="SAVE Mexico" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🐢</div>
-    <div><div class="vol-title">Social Media Manager & Volunteer</div><div class="vol-org">SAVE Mexico — Turtle Conservation, Akumal, Mexico</div><div class="vol-date">2023</div></div>
+    <div><div class="vol-title">Social Media Manager & Volunteer</div><div class="vol-org">SAVE Mexico, Turtle Conservation, Akumal, Mexico</div><div class="vol-date">2023</div><div class="vol-desc">Managed social media and outreach for a sea turtle conservation organization, and supported conservation activities in Akumal, Mexico.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/orchids-for-peace.jpeg" alt="Orquídeas para la Paz" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🌺</div>
-    <div><div class="vol-title">General Communication Manager</div><div class="vol-org">Orquídeas para la Paz — The Arias Lab, Antioquia, Colombia · <a href="https://theariaslab.github.io/volunteers.html" target="_blank">theariaslab.github.io</a></div><div class="vol-date">2022–2024</div></div>
+    <div><div class="vol-title">General Communication Manager</div><div class="vol-org">Orquídeas para la Paz, The Arias Lab, Antioquia, Colombia · <a href="https://theariaslab.github.io/volunteers.html" target="_blank">theariaslab.github.io</a></div><div class="vol-date">2022–2024</div><div class="vol-desc">Led general communications for Orquídeas para la Paz, an orchid conservation initiative of The Arias Lab, sharing its work with the public.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/ucaldas.jpg" alt="Universidad de Caldas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🎓</div>
-    <div><div class="vol-title">Curriculum Representative — Master's in Biological Sciences</div><div class="vol-org">Universidad de Caldas</div><div class="vol-date">2020–2021</div></div>
+    <div><div class="vol-title">Curriculum Representative, Master's in Biological Sciences</div><div class="vol-org">Universidad de Caldas</div><div class="vol-date">2020–2021</div><div class="vol-desc">Represented students in the curriculum matters of the Master's program, acting as the link between students and faculty.</div></div>
+  </div>
+  <h3 class="sh2">Memberships</h3>
+  <div class="vol-item">
+    <img class="vol-logo" src="images/ministerio_ciencias.png" alt="Minciencias" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="vol-logo-ph" style="display:none">🇨🇴</div>
+    <div><div class="vol-title">Junior Researcher (Investigador Junior), SNCTeI</div><div class="vol-org">Ministerio de Ciencia, Tecnología e Innovación (Minciencias), Colombia</div><div class="vol-date">2025 – Present</div><div class="vol-desc">Officially recognized within the National System of Science, Technology and Innovation (SNCTeI) of Colombia. Scientific evaluator for Convocatoria 975 de 2026, reviewing master's-level research proposals.</div></div>
   </div>
   <div class="vol-item">
     <img class="vol-logo" src="images/gebiome.jpeg" alt="GEBIOME" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🧫</div>
-    <div><div class="vol-title">Member — GEBIOME Research Group</div><div class="vol-org">Genetics, Biodiversity and Ecosystem Management · Universidad de Caldas</div><div class="vol-date">2017–Present</div></div>
+    <div><div class="vol-title">Member, GEBIOME Research Group</div><div class="vol-org">Genetics, Biodiversity and Ecosystem Management · Universidad de Caldas</div><div class="vol-date">2017–Present</div><div class="vol-desc">Research group focused on genetics, biodiversity and ecosystem management; collaborated on research projects in these areas.</div></div>
   </div>
   <div class="vol-item">
     <div class="vol-logo-ph">🌺</div>
-    <div><div class="vol-title">Member — Genomics and Conservation Research Group</div><div class="vol-org">The Colombian Orchid Society</div><div class="vol-date">2020–2021</div></div>
+    <div><div class="vol-title">Member, Genomics and Conservation Research Group</div><div class="vol-org">The Colombian Orchid Society</div><div class="vol-date">2020–2021</div><div class="vol-desc">Research group applying genomic tools to the conservation of Colombian orchids.</div></div>
   </div>
   <div class="vol-item">
-    <img class="vol-logo" src="images/segem.jpeg" alt="SeGeM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <img class="vol-logo" src="images/segem.png" alt="SeGeM" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
     <div class="vol-logo-ph" style="display:none">🧬</div>
-    <div><div class="vol-title">Member — SeGeM (Molecular Genetics Research Group)</div><div class="vol-org">Universidad de Caldas</div><div class="vol-date">2017–2023</div></div>
+    <div><div class="vol-title">Member & Leader, SeGeM (Molecular Genetics Research Group)</div><div class="vol-org">Universidad de Caldas</div><div class="vol-date">2017–2023</div><div class="vol-desc">Molecular genetics research group where I began my research training, worked on molecular and genetic studies, and served as group leader (2017–2018).</div></div>
+  </div>
+  <div class="vol-item">
+    <div class="vol-logo-ph">🌿</div>
+    <div><div class="vol-title">Member, ABEUC</div><div class="vol-org">Asociación de Biólogos Egresados de la Universidad de Caldas (Association of Biology Graduates of the Universidad de Caldas)</div><div class="vol-date">2019 – Present</div><div class="vol-desc">Professional association of biologists who graduated from the Universidad de Caldas, connecting alumni across the profession.</div></div>
   </div>
 </div>
 
 <!-- COURSES -->
 <div id="courses" class="sec">
-  <h2 class="sh">Further education & certifications</h2>
-  <h3 class="sh2">Career development courses</h3>
+  <h2 class="sh">Postgraduate courses & training</h2>
+  <h3 class="sh2">Bioinformatics, data science &amp; programming</h3>
   <table class="tbl">
     <thead><tr><th>Course</th><th>Institution</th><th>Year</th></tr></thead>
     <tbody>
-      <tr><td>Analysis of Exomes in Cancer</td><td>Universidad del Valle / Colombian Pre-Congress course on Computational Biology</td><td>2017</td></tr>
-      <tr><td>Genetic Engineering & Microbial Biotechnology</td><td>Universidad Santiago de Cali</td><td>2018</td></tr>
-      <tr><td>Evolutionary Genomic Training at the Caribbean Coast</td><td>Universidad de los Andes Sede Caribe, Cartagena</td><td>2019</td></tr>
-      <tr><td>Mammal Parasitology: Field Methods</td><td>U. de Antioquia – Univ. of Nebraska-Lincoln</td><td>2019</td></tr>
-      <tr><td>COVID-19: Tackling the Novel Coronavirus</td><td>FutureLearn</td><td>2020</td></tr>
-      <tr><td>Genomic Technologies in Clinical Diagnostics: Molecular Techniques</td><td>St George's, University of London – FutureLearn</td><td>2020</td></tr>
-      <tr><td>Metagenomics applied to pathogen & antimicrobial resistance surveillance</td><td>Technical University of Denmark – Coursera</td><td>2020</td></tr>
-      <tr><td>Whole Genome Sequencing of Bacterial Genomes</td><td>Technical University of Denmark – Coursera</td><td>2020</td></tr>
-      <tr><td>Bacterial Genomes Program (5 courses)</td><td>Wellcome Genome Campus – FutureLearn</td><td>2020</td></tr>
+      <tr><td>Bioinformatics Specialization (3 courses): Finding Hidden Messages in DNA; Genome Sequencing; Comparing Genes, Proteins, and Genomes</td><td>University of California, San Diego – Coursera</td><td>2018–2019</td></tr>
       <tr><td>Bioinformatic Methods I & II</td><td>University of Toronto – Coursera</td><td>2020</td></tr>
-      <tr><td>Bioinformatics I, II & III</td><td>University of California, San Diego – Coursera</td><td>2020</td></tr>
-      <tr><td>Introduction to Genomic Technologies</td><td>Johns Hopkins University – Coursera</td><td>2020</td></tr>
-      <tr><td>Bioconductor for Genomic Data Science</td><td>Johns Hopkins University – Coursera</td><td>2020</td></tr>
-      <tr><td>Biological Diversity (Theories, Measures and Data Sampling)</td><td>Tomsk State University – Coursera</td><td>2020</td></tr>
-      <tr><td>GIS Specialization Program (5 courses)</td><td>Coursera</td><td>2020</td></tr>
-      <tr><td>Tropical Parasitology: Protozoans, Worms, Vectors and Human Diseases</td><td>Coursera</td><td>2020</td></tr>
+      <tr><td>Bioinformatics for Biologists: An Introduction to Linux, Bash Scripting, and R</td><td>Wellcome Connecting Science – FutureLearn</td><td>2023</td></tr>
+      <tr><td>Introduction to Systems Biology</td><td>Icahn School of Medicine at Mount Sinai – Coursera</td><td>2016</td></tr>
+      <tr><td>What is Data Science?</td><td>IBM – Coursera</td><td>2020</td></tr>
     </tbody>
   </table>
 
-  <h3 class="sh2">Certificates & research ethics training</h3>
+  <h3 class="sh2">Genomics &amp; molecular diagnostics</h3>
   <table class="tbl">
-    <thead><tr><th>Certificate</th><th>Institution</th><th>Date</th></tr></thead>
+    <thead><tr><th>Course</th><th>Institution</th><th>Year</th></tr></thead>
     <tbody>
-      <tr><td>Introduction to the Care and Use of Fish</td><td>Dalhousie University – CCAC / NIAUT</td><td>Mar 2022</td></tr>
-      <tr><td>CCAC Online Ethics – Fish Users</td><td>University of British Columbia</td><td>—</td></tr>
+      <tr><td>Genomic Data Science Specialization: Introduction to Genomic Technologies; Bioconductor for Genomic Data Science</td><td>Johns Hopkins University – Coursera</td><td>2019–2020</td></tr>
+      <tr><td>Bacterial Genomes Program (5 courses): DNA to Protein Function; Accessing and Analysing Microbial Genome Data; Disease Outbreaks and Antimicrobial Resistance; Comparative Genomics with ACT; Antimicrobial Resistance in Bacterial Pathogens</td><td>Wellcome Genome Campus – FutureLearn</td><td>2018–2020</td></tr>
+      <tr><td>Metagenomics applied to surveillance of pathogens and antimicrobial resistance</td><td>Technical University of Denmark – Coursera</td><td>2019</td></tr>
+      <tr><td>Whole Genome Sequencing of Bacterial Genomes: Tools and Applications</td><td>Technical University of Denmark – Coursera</td><td>2020</td></tr>
+      <tr><td>Genomic Technologies in Clinical Diagnostics: Molecular Techniques</td><td>St George's, University of London – FutureLearn</td><td>2018</td></tr>
+      <tr><td>Analysis of Exomes in Cancer (pre-congress course, Cali, Colombia)</td><td>Colombian Congress on Computational Biology</td><td>2017</td></tr>
+      <tr><td>Evolutionary Genomic Training at the Caribbean Coast</td><td>Universidad de los Andes Sede Caribe, Cartagena</td><td>2019</td></tr>
+      <tr><td>Genetic Engineering and its Application to Microbial Biotechnology (22 h)</td><td>Universidad Santiago de Cali</td><td>2018</td></tr>
+      <tr><td>Basic Molecular Biology Module 4: PCR and Real-Time PCR</td><td>CDC</td><td>2020</td></tr>
+      <tr><td>Workshop on Molecular Detection of Pathogens (5 h)</td><td>IEEE EMBS Student Chapter ESPE</td><td>2020</td></tr>
+      <tr><td>Histology and Molecular Biology of Ticks (40 h)</td><td>GEBIOME, Universidad de Caldas – Brazilian Central of Studies on Ticks Morphology (UNESP)</td><td>2016</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh2">Parasitology, epidemiology &amp; global health</h3>
+  <table class="tbl">
+    <thead><tr><th>Course</th><th>Institution</th><th>Year</th></tr></thead>
+    <tbody>
+      <tr><td>Mammal Parasitology: Field Methods (Centro de Investigación La Palmita, Casanare, Colombia)</td><td>H. W. Manter Laboratory of Parasitology, University of Nebraska-Lincoln – Universidad de Antioquia</td><td>2019</td></tr>
+      <tr><td>Tropical Parasitology: Protozoans, Worms, Vectors and Human Diseases</td><td>Duke University & Kilimanjaro Christian Medical University College – Coursera</td><td>2019</td></tr>
+      <tr><td>Epidemiology: The Basic Science of Public Health</td><td>University of North Carolina at Chapel Hill – Coursera</td><td>2019</td></tr>
+      <tr><td>COVID-19: Tackling the Novel Coronavirus</td><td>London School of Hygiene &amp; Tropical Medicine – FutureLearn</td><td>2020</td></tr>
+      <tr><td>Global Health at the Human-Animal-Ecosystem Interface</td><td>University of Geneva – Coursera</td><td>2025</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh2">Ecology, GIS &amp; fieldwork</h3>
+  <table class="tbl">
+    <thead><tr><th>Course</th><th>Institution</th><th>Year</th></tr></thead>
+    <tbody>
+      <tr><td>Geographic Information Systems (GIS) Specialization (5 courses)</td><td>University of California, Davis – Coursera</td><td>2018–2019</td></tr>
+      <tr><td>Diploma in ICT Competencies: Data Collection and Georeferencing (120 h)</td><td>Corporación Unificada Nacional (CUN) &amp; Colnodo – Google.org JuvenTIC project</td><td>2018</td></tr>
+      <tr><td>Biological Diversity: Theories, Measures and Data Sampling Techniques</td><td>National Research Tomsk State University – Coursera</td><td>2020</td></tr>
+      <tr><td>Global Environmental Management</td><td>Technical University of Denmark – Coursera</td><td>2025</td></tr>
+      <tr><td>Wilderness First Aid: Introduction</td><td>University of Colorado System – Coursera</td><td>2025</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh2">University teaching &amp; scientific writing</h3>
+  <table class="tbl">
+    <thead><tr><th>Course</th><th>Institution</th><th>Year</th></tr></thead>
+    <tbody>
+      <tr><td>Diploma in University Teaching and Didactics</td><td>Politécnico Superior de Colombia, Medellín</td><td>2020</td></tr>
+      <tr><td>Scientific Reading and Writing (16 h)</td><td>Universidad de Caldas, Vice-Rectorate for Research and Postgraduate Studies</td><td>2016</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="sh2">Animal care &amp; research ethics</h3>
+  <table class="tbl">
+    <thead><tr><th>Certificate</th><th>Institution</th><th>Year</th></tr></thead>
+    <tbody>
+      <tr><td>Introduction to the Care and Use of Fish (NIAUT requirement)</td><td>Dalhousie University – CCAC / NIAUT</td><td>2022</td></tr>
+      <tr><td>CCAC Online Ethics – Fish Users</td><td>University of British Columbia</td><td>2025</td></tr>
       <tr><td>Research Ethics – Tri-Council Policy Statement (TCPS 2: CORE 2022)</td><td>Panel on Research Ethics, Government of Canada</td><td>2022</td></tr>
-      <tr><td>CCAC's Fish Welfare and Aquatic Facilities</td><td>CCAC Webinar</td><td>Nov 2024</td></tr>
-      <tr><td>CCAC's Animal Welfare Assessment</td><td>CCAC Webinar</td><td>Jan 2025</td></tr>
-      <tr><td>From Tank to Paper: Advance Reproducibility through Better Reporting</td><td>Zebrafish Husbandry Association Webinar</td><td>Feb 2025</td></tr>
-      <tr><td>Ethics in University Research</td><td>Universidad del País Vasco – MiriadaX</td><td>—</td></tr>
-      <tr><td>Diploma in University Teaching and Didactics</td><td>Politécnico Superior de Colombia</td><td>—</td></tr>
+      <tr><td>From Tank to Paper: Advance Reproducibility through Better Reporting (webinar)</td><td>Zebrafish Husbandry Association</td><td>2025</td></tr>
+      <tr><td>Ethics in University Research (36 h)</td><td>Universidad del País Vasco – MiriadaX</td><td>2016</td></tr>
     </tbody>
   </table>
 </div>
@@ -873,17 +1007,26 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
   <table class="tbl">
     <thead><tr><th>Event & Presentation</th><th>Role</th><th>Year</th></tr></thead>
     <tbody>
-      <tr><td>12th Atlantic Regional Developmental Biology Symposium, Halifax — <em>Short-Term Gene Expression Responses in Danio rerio Larvae following Simulated Microgravity Exposure</em></td><td><span class="role-badge">Oral</span></td><td>2025</td></tr>
-      <tr><td>Biology and Applied Aquatic Sciences (BAAS), Wolfville, NS — <em>Insights into 2D and 3D Simulated Microgravity: Impacts on Zebrafish Skeleton Ossification and Gene Expression</em></td><td><span class="role-badge">Poster</span></td><td>2025</td></tr>
-      <tr><td>Canadian Space Health Research Symposium, London, Ontario — <em>Short-Term Gene Expression Responses in Danio rerio Larvae following Simulated Microgravity Exposure</em></td><td><span class="role-badge">Poster</span></td><td>2024</td></tr>
-      <tr><td>11th Atlantic Regional Developmental Biology Symposium, Halifax — <em>Exploring the Effects of Simulated Microgravity in Zebrafish: Differential Gene Expression and Ossification in 2D vs 3D Rotation</em></td><td><span class="role-badge">Oral</span></td><td>2024</td></tr>
-      <tr><td>American Association for Anatomy Annual Meeting, Washington DC — <em>Spatial and Temporal Patterning of the Tracheal Cartilage</em></td><td><span class="role-badge">Co-author</span></td><td>2023</td></tr>
-      <tr><td>QAtCanSTEM, MSVU Halifax — <em>Effects of simulated microgravity and vibration on osteoblast and osteoclast activity in cultured zebrafish scales</em></td><td><span class="role-badge">Poster</span></td><td>2022</td></tr>
-      <tr><td>9th Atlantic Regional Developmental Biology Symposium, MSVU Halifax — <em>Does exposure to simulated microgravity and vibration affect bone cells in a zebrafish scale system?</em></td><td><span class="role-badge">Poster</span></td><td>2022</td></tr>
-      <tr><td>XVII Colombian Congress of Parasitology and Tropical Medicine, Cali — <em>Comparative evaluation of DNA conservation and extraction methods in blood of wild mammals</em></td><td><span class="role-badge">Poster</span></td><td>2019</td></tr>
-      <tr><td>VIII Colombian Symposium of Virology / IV Latin American Congress of Virology, Bogotá — <em>HIV mortality and TB coinfection in Caldas, Colombia (2010–2018)</em></td><td><span class="role-badge">Poster</span></td><td>2019</td></tr>
-      <tr><td>XV Colombian & IX International Human Genetics Congress, Barranquilla — <em>Epidemiological meta-analysis of variables related to canine breast cancer</em></td><td><span class="role-badge">Co-author</span></td><td>2018</td></tr>
-      <tr><td>V Regional Biology Symposium, UTP, Santa Rosa de Cabal — Two presentations on genotoxicity and hot spring microbial ecology</td><td><span class="role-badge">Poster</span></td><td>2018</td></tr>
+      <tr><td>12th Atlantic Regional Developmental Biology Symposium, Halifax, Canada, <em>Short-Term Gene Expression Responses in Danio rerio Larvae following Simulated Microgravity Exposure</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Oral Presenter</span></td><td>2025</td></tr>
+      <tr><td>Biology and Applied Aquatic Sciences (BAAS), Wolfville, NS, Canada, <em>Insights into 2D and 3D Simulated Microgravity: Impacts on Zebrafish Skeleton Ossification and Gene Expression</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2025</td></tr>
+      <tr><td>1st ISCB LGBTQ+ Symposium, online (<a href="https://iscb.junolive.co/Nucleus/live/breakouts/lgbtq_symposium" target="_blank">International Society for Computational Biology</a>)</td><td><span class="role-badge">Organizer</span></td><td>2024</td></tr>
+      <tr><td>20th ISCB Student Council Symposium (SCS 2024), Montréal, Canada (<a href="https://academic.oup.com/bioinformaticsadvances/article/6/1/vbag097/8677717" target="_blank">published in <em>Bioinformatics Advances</em></a>)</td><td><span class="role-badge">Organizer</span></td><td>2024</td></tr>
+      <tr><td>Biology and Applied Aquatic Sciences (BAAS), Wolfville, NS, Canada, <em>Effects of mechanostimulation on adult bone homeostasis in Zebrafish</em><span class="ev-authors">Joseph F., <strong>Carvajal-Agudelo J.D.</strong> &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Co-author</span></td><td>2024</td></tr>
+      <tr><td>Biology and Applied Aquatic Sciences (BAAS), Wolfville, NS, Canada, <em>Gene expression changes in larval zebrafish (Danio rerio) after microgravity and vibration exposure</em><span class="ev-authors">LeDrew E., <strong>Carvajal-Agudelo J.D.</strong> &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Co-author</span></td><td>2024</td></tr>
+      <tr><td>Canadian Space Health Research Symposium, London, Ontario, Canada, <em>Short-Term Gene Expression Responses in Danio rerio Larvae following Simulated Microgravity Exposure</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2024</td></tr>
+      <tr><td>11th Atlantic Regional Developmental Biology Symposium, Halifax, Canada, <em>Exploring the Effects of Simulated Microgravity in Zebrafish: Differential Gene Expression and Ossification in 2D vs 3D Rotation</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, Eaton J. &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Oral Presenter</span></td><td>2024</td></tr>
+      <tr><td>American Association for Anatomy Annual Meeting, Washington DC, USA, <em>Spatial and Temporal Patterning of the Tracheal Cartilage</em><span class="ev-authors">Franz-Odendaal T., <strong>Carvajal-Agudelo J.D.</strong>, Apienti T., Tench L. &amp; Muntzar R.</span></td><td><span class="role-badge">Co-author</span></td><td>2023</td></tr>
+      <tr><td>QAtCanSTEM, MSVU Halifax, Canada, <em>Effects of simulated microgravity and vibration on osteoblast and osteoclast activity in cultured zebrafish scales</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, McNeil A. &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2022</td></tr>
+      <tr><td>9th Atlantic Regional Developmental Biology Symposium, MSVU Halifax, Canada, <em>Does exposure to simulated microgravity and vibration affect bone cells in a zebrafish scale system?</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, McNeil A. &amp; Franz-Odendaal T.</span></td><td><span class="role-badge">Oral Presenter</span></td><td>2022</td></tr>
+      <tr><td>4th RSG-Colombia Bioinformatics Symposium (<a href="https://rsgcolombia.github.io/eventos.html" target="_blank">ISCB Student Council RSG Colombia</a>), Universidad de los Andes, Caribbean Campus, Cartagena, Colombia</td><td><span class="role-badge">Organizer</span></td><td>2022</td></tr>
+      <tr><td>3rd RSG-Colombia Bioinformatics Symposium (<a href="https://rsgcolombia.github.io/eventos.html" target="_blank">ISCB Student Council RSG Colombia</a>), virtual, round table "Professional prospects in bioinformatics: between academia and industry"</td><td><span class="role-badge">Organizer</span></td><td>2021</td></tr>
+      <tr><td>XVII Colombian Congress of Parasitology and Tropical Medicine, Cali, Colombia, <em>Wild mammals involved in the circulation of <em>Rickettsia</em> spp. in the department of Arauca (Colombian Orinoquia)</em><span class="ev-authors">Velásquez-Guarín D., Mejía-Fontecha I.Y., <strong>Carvajal-Agudelo J.D.</strong>, Rivera-Páez F.A., Pérez Cárdenas J.E. &amp; Ramírez-Chaves H.E.</span></td><td><span class="role-badge">Co-author</span></td><td>2019</td></tr>
+      <tr><td>XVII Colombian Congress of Parasitology and Tropical Medicine, Cali, Colombia, <em>Molecular characterization and morphological detection of <em>Trypanosoma</em> spp. in wild mammals from Arauca, Colombia: an approach to potential reservoirs</em><span class="ev-authors">Trujillo-Betancur M.P., <strong>Carvajal-Agudelo J.D.</strong>, Ramírez-Chaves H.E. &amp; Rivera-Páez F.A.</span></td><td><span class="role-badge">Co-author</span></td><td>2019</td></tr>
+      <tr><td>XVII Colombian Congress of Parasitology and Tropical Medicine, Cali, Colombia, <em>Comparative evaluation of DNA conservation and extraction methods in blood of wild mammals used in the study of hemoparasites</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, Trujillo-Betancur M.P., Velásquez-Guarín D., Pérez Cárdenas J.E., Ramírez-Chaves H.E. &amp; Rivera-Páez F.A.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2019</td></tr>
+      <tr><td>VIII Colombian Symposium of Virology / IV Latin American Congress of Virology, Bogotá, Colombia, <em>HIV mortality and TB coinfection in Caldas, Colombia (2010–2018)</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong>, Rivera-Páez F.A. &amp; Pérez Cárdenas J.E.</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2019</td></tr>
+      <tr><td>XV Colombian & IX International Human Genetics Congress, Barranquilla, Colombia, <em>Epidemiological meta-analysis of clinical variables related to canine breast cancer</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Cortes Mera D.M. (other authors)</span></td><td><span class="role-badge">Co-author</span></td><td>2018</td></tr>
+      <tr><td>V Regional Biology Symposium, UTP, Santa Rosa de Cabal, Colombia, <em>Evaluation of the genotoxic effect induced by phenthoate in Poecilia reticulata (Cyprinodontiformes: Poeciliidae)</em><span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Marulanda S. (and others)</span></td><td><span class="role-badge">Oral Presenter</span></td><td>2018</td></tr>
+      <tr><td>V Regional Biology Symposium, UTP, Santa Rosa de Cabal, Colombia, Hot spring microbial ecology<span class="ev-authors"><strong>Carvajal-Agudelo J.D.</strong> &amp; Marulanda S. (and others)</span></td><td><span class="role-badge">Poster Presenter</span></td><td>2018</td></tr>
     </tbody>
   </table>
 </div>
@@ -895,6 +1038,7 @@ footer { background: var(--navy); color: rgba(255,255,255,.4); text-align: cente
     <p>Open to research collaborations, questions about my work, or just a good conversation about biology.</p>
     <div class="clinks">
       <a class="clink" href="mailto:jdavidcarvajal@gmail.com"><div class="cico" style="background:#fee2e2;color:#991b1b">✉</div>jdavidcarvajal@gmail.com</a>
+      <a class="clink" href="mailto:juandavid.carvajal@ucalgary.ca"><div class="cico" style="background:#fee2e2;color:#991b1b">✉</div>juandavid.carvajal@ucalgary.ca</a>
       <a class="clink" href="https://linkedin.com/in/biodavi" target="_blank"><div class="cico" style="background:#dbeafe;color:#1e40af">in</div>linkedin.com/in/biodavi</a>
       <a class="clink" href="https://scholar.google.com/citations?user=_loX9b4AAAAJ&hl=es" target="_blank"><div class="cico" style="background:#e1f5ee;color:#0f6e56">S</div>Google Scholar</a>
       <a class="clink" href="https://www.researchgate.net/profile/Juan-Carvajal-Agudelo" target="_blank"><div class="cico" style="background:#d9f7f3;color:#00524a">RG</div>ResearchGate</a>
