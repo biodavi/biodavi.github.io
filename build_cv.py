@@ -16,12 +16,11 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 SUMMARY = (
     "Molecular biologist from Colombia and PhD student in Veterinary Medical Sciences "
-    "(Wildlife Health and Ecology) at the University of Calgary, supported by an NSERC Canada "
-    "Graduate Scholarship. My doctoral project studies emerging pathogens in wild mammals from "
-    "Costa Rica. My background spans molecular biology, bioinformatics, the microbiome, "
+    "(Wildlife Health and Ecology) at the University of Calgary. My doctoral project studies emerging pathogens in wild mammals from "
+    "Costa Rica using molecular and bioinformatic approaches and artificial intelligence. My background spans molecular biology, bioinformatics, the microbiome, "
     "tick-borne pathogens and space biology, with experience in molecular diagnostics, field "
     "sampling of wild mammals, zebrafish research on bone under simulated microgravity, "
-    "and university teaching. Native Spanish speaker with advanced English."
+    "and university teaching."
 )
 
 # (section id, heading) in CV order
