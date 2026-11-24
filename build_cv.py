@@ -17,8 +17,9 @@ CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 SUMMARY = (
     "Molecular biologist from Colombia and PhD student in Veterinary Medical Sciences "
     "(Wildlife Health and Ecology) at the University of Calgary. My doctoral project studies emerging pathogens in wild mammals from "
-    "Costa Rica using molecular and bioinformatic approaches and artificial intelligence. My background spans molecular biology, bioinformatics, the microbiome, "
-    "tick-borne pathogens and space biology, with experience in molecular diagnostics, field "
+    "Costa Rica using molecular and bioinformatic approaches and artificial intelligence. I am particularly interested in "
+    "applying molecular biology and bioinformatics to the study of neotropical diseases. My background spans molecular "
+    "biology, bioinformatics, tick-borne pathogens and space biology, with experience in molecular diagnostics, field "
     "sampling of wild mammals, zebrafish research on bone under simulated microgravity, "
     "and university teaching."
 )
@@ -60,14 +61,16 @@ p { margin: 0 0 4px; }
 .pub-title, .pub-authors, .pub-journal, .pub-link { display: inline; }
 .pub-item { margin: 0 0 4px; }
 .pub-title { font-weight: 700; }
-.pub-authors, .pub-journal { margin-left: 3px; }
+.pub-authors, .pub-journal { margin-left: 0; }
 .pub-journal { font-style: italic; }
-.pub-link { margin-left: 3px; }
+.pub-link { margin-left: 0; }
 .pub-title::after, .pub-journal::after { content: '.'; }
 .pub-title::after { font-weight: 400; }
 .pub-authors, .ev-authors { color: #444; }
 .ev-authors { display: block; font-size: 8.5pt; }
 .exp-desc, .vol-desc, .award-desc { margin-top: 1px; }
+.exp-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.exp-head .exp-date { flex-shrink: 0; white-space: nowrap; }
 ul { margin: 2px 0 0; padding-left: 16px; }
 li { margin: 0; }
 .proj-grid { display: block; }
@@ -105,6 +108,19 @@ def clean(node):
             f'{grant + ". " if grant else ""}<span class="proj-skills">{txt(".proj-meta")}.</span></p>'
         )
         card.replace_with(BeautifulSoup(para, "html.parser"))
+    # Education/experience: title, organization and date on one line
+    for row in node.select(".exp-item"):
+        get = lambda sel: (row.select_one(sel).decode_contents().strip() if row.select_one(sel) else "")
+        head = (
+            f'<div class="exp-head"><span><span class="exp-role">{get(".exp-role")}</span>'
+            f'{", " + get(".exp-org") if get(".exp-org") else ""}</span>'
+            f'<span class="exp-date">{get(".exp-date")}</span></div>'
+        )
+        for sel in (".exp-role", ".exp-org", ".exp-date"):
+            if row.select_one(sel):
+                row.select_one(sel).decompose()
+        body = row.find("div") or row
+        body.insert(0, BeautifulSoup(head, "html.parser"))
     for item, name, parts in (
         (".award-row", ".award-name", (".award-inst", ".award-year", ".award-desc")),
         (".vol-item", ".vol-title", (".vol-org", ".vol-date", ".vol-desc")),
@@ -139,13 +155,13 @@ def main():
 <style>{CSS}</style></head><body>
 <header>
   <h1>Juan David Carvajal-Agudelo</h1>
-  <div class="sub">PhD Student, Veterinary Medical Sciences · University of Calgary</div>
+  <div class="sub">PhD Student, Veterinary Medical Sciences · Faculty of Veterinary Medicine · University of Calgary</div>
   <div class="contact">
     <a href="mailto:jdavidcarvajal@gmail.com">jdavidcarvajal@gmail.com</a>
     <a href="mailto:juandavid.carvajal@ucalgary.ca">juandavid.carvajal@ucalgary.ca</a>
     <a href="https://linkedin.com/in/biodavi">linkedin.com/in/biodavi</a>
     <a href="https://orcid.org/0000-0002-2888-7147">orcid.org/0000-0002-2888-7147</a>
-    <a href="https://scholar.google.com/citations?user=_loX9b4AAAAJ">scholar.google.com/citations?user=_loX9b4AAAAJ</a>
+    <a href="https://scholar.google.com/citations?user=_loX9b4AAAAJ">Google Scholar</a>
   </div>
 </header>
 <section><h2>Summary</h2><p>{SUMMARY}</p><p class="skills"><strong>Research areas:</strong> {skills}.</p></section>
